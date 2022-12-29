@@ -1,0 +1,1912 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.opacityfunc(@opacity: 1) {
+    opacity: @opacity;
+    filter: "alpha(opacity=@{@opacity*100})";
+}
+body{
+    font-size: 14px;
+}
+@-webkit-keyframes offsetAnim {
+    100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes offsetAnim {
+    100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+    100% {
+    .opacityfunc();
+  }
+}
+
+@keyframes fadeIn {
+    100% {
+    .opacityfunc();
+  }
+}
+@-webkit-keyframes fadeOut {
+    100% {
+    .opacityfunc(0);
+  }
+}
+
+@keyframes fadeOut {
+    100% {
+    .opacityfunc(0);
+  }
+}
+.bccolor1{
+    background: #a41823;
+}
+.bccolor2{
+    background: #ec6c21;
+}
+.bccolor3{
+    background: #efde1c;
+}
+.bccolor4{
+    background: #09a247;
+}
+.bccolor5{
+    background: #187eaf;
+}
+.bccolor6{
+    background: #4069dd;
+}
+.bccolor7{
+    background: #d501d2;
+}
+
+@font-face {
+    font-family: 'myfont';
+    src: url('../myfont.eot'); /* IE9 Compat Modes */
+    src: url('../myfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('../myfont.TTF')  format('truetype'); /* Safari, Android, iOS */
+            
+}
+.hover(@background: #ffff00;@text-align: right;@top: -14px){
+    width: 1.6vh;
+    height: 2px;
+    background: @background;
+    position: absolute;
+    top: @top;
+    @{text-align}: 0;
+    transition: width 0.3s;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    @time0: 0.5s;
+    .sca{
+        transition: all @time0 linear;
+        &.active{
+            transform: translateY(-50%);
+        }
+        .headpage{
+            height: 100vh;
+            width: 100%;
+            color: yellow;
+            background: #490000;
+            border: 1px solid #490000;
+            @time1: 5s;
+            @time2: 1.5s;
+            position: relative;
+            .logobox{
+                margin: 22.2vh auto 0;
+                width: 420px;
+                height: 41.2vh;
+                position: relative;
+                padding-top: 1px;
+                .posi{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 21vh;
+                    #svg1{
+                        display: block;
+                        margin: 0 auto;
+                        width: 20.4vh;
+                        height: 20.4vh;
+                        .svg-text__shaded__stroke {
+                          stroke-dasharray: 620px 643px;
+                          stroke-dashoffset: 620px;
+                        }
+                        .svg-text__shaded__stroke.active {
+                          -webkit-animation: offsetAnim @time1 linear forwards, fadeOut @time2 linear @time1 forwards;
+                                  animation: offsetAnim @time1 linear forwards, fadeOut @time2 linear @time1 forwards;
+                        }
+                    }
+                    .logo{
+                        display: block;
+                        margin: 0 auto;
+                        width: 20.4vh;
+                        height: 20.4vh;
+                        .opacityfunc(0);
+                        -webkit-animation: fadeIn @time2 linear @time1 forwards;
+                                animation: fadeIn @time2 linear @time1 forwards;
+                    }
+                }
+                img.second{
+                    display: block;
+                    width: 36.5vh;
+                    height: 14.2vh;
+                    margin: 24.4vh auto 0;
+                    .opacityfunc(0);
+                    -webkit-animation: fadeIn @time2 linear @time1 forwards;
+                            animation: fadeIn @time2 linear @time1 forwards;
+                }
+                img.third{
+                    position: absolute;
+                    width: 3.52vh;
+                    height: 1.76vh;
+                    left: ~"calc(50% + 45px)";
+                    top: 8px;
+                    .opacityfunc(0);
+                    -webkit-animation: fadeIn @time2 linear @time1 forwards;
+                            animation: fadeIn @time2 linear @time1 forwards;
+                }
+            }
+            .button{
+                width: 66px;
+                text-align: center;
+                margin: 20px auto 0;
+                @time3: 0.6s;
+                img{
+                    width: 3.7vh;
+                    height: 2vh;
+                    margin-top: 0;
+                    .opacityfunc(0);
+                    -webkit-animation: down1 @time3 linear (@time1+@time2)  infinite;
+                            animation: down1 @time3 linear (@time1+@time2) infinite;
+                }
+            }
+            .progress1{
+                width: 4px;
+                height: 25.5vh;
+                position: absolute;
+                left: ~"calc(50% - 2px)";
+                bottom: 0;
+                background: #ffffff;
+                .opacityfunc(0);
+                @time4: 2s;
+                -webkit-animation: burn @time4 linear (@time1+@time2)  forwards;
+                            animation: burn @time4 linear (@time1+@time2) forwards;
+            }
+        }
+        .body{
+            width: 100%;
+            height: 100vh;
+            transform: translateX(-50%);
+            @time2: 0.5s;
+            transition: all @time2 linear;
+            &.moveLeft{
+                transform: translateX(0%);
+                &>.partleft .section .right .zy .first{
+                    .opacityfunc(0);
+                    width: 0;
+                }
+                &>.partleft .section .right .zy .second{
+                    .opacityfunc(1);
+                    width: initial;
+                    z-index: 1;
+                }
+                &>.partleft .bar{
+                    .opacityfunc(0);
+                    width: 0;
+                    transition: opacity @time2 linear, width 0s linear @time2; 
+                }
+                &>.partleft .section .right .animationpart.active{
+                    .opacityfunc(0);
+                }
+            }
+            &.moveRight{
+                transform: translateX(-100%);
+                &>.partright .buttonright .unit .open{
+                    .opacityfunc(0);
+                    width: 0;
+                }
+                &>.partright .buttonright .unit .close{
+                    .opacityfunc(1);
+                    width: 100%;
+                }
+            }
+            &>.partleft{
+                width: 100%;
+                height: 100%;
+                background: #ffffff;
+                position: relative;
+                .bar{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    display: inline-block;
+                    height: 100%;
+                    width: 24px;
+                    z-index: 2;
+                    .opacityfunc(1);
+                    transition: opacity 0.5s linear; 
+                    .box{
+                        height: 100%;
+                        position: relative;
+                        &>div{
+                            height: 14.2857%;
+                            text-align: center;
+                            color: #ffffff;
+                            font-size: 12px;
+                            padding: ~"calc(7.14vh - 13px)" 4px;
+                            &.cube{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 14.2857%;
+                                padding: 2px;
+                                transition: all 0.3s ease-in-out;
+                                div{
+                                    border: 1px solid #ffffff;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                &.active2{
+                                    top: 14.2857%;
+                                }
+                                &.active3{
+                                    top: 28.5714%;
+                                }
+                                &.active4{
+                                    top: 42.8571%;
+                                }
+                                &.active5{
+                                    top: 57.1429%;
+                                }
+                                &.active6{
+                                    top: 71.4286%;
+                                }
+                                &.active7{
+                                    top: 85.7143%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .section{
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-family: myfont;
+                    &.active{
+                        z-index: 1;
+                    }
+                    .left{
+                        width: 5rem;
+                        height: 100%;
+                        color: #FFFFFF;
+                        text-align: right;
+                        overflow: hidden;
+                        text-align: right;
+                        padding-top: 12vh;
+                        font-size: 1.85vh;
+                        display: none;
+                        .opacityfunc(0);
+                        transition: all 0.2s linear;
+                        &.active{
+                            .opacityfunc(1);
+                            z-index: 1;
+                        }
+                        div{
+                            display: inline-block;
+                            max-width: 3.65rem;
+                            position: relative;
+                            right: 6vh;
+                            margin-bottom: 6.5vh;
+                            text-indent: 1.5em;
+                            .hoverL{
+                                    .hover();
+                            }
+                            &:hover{
+                                .hoverL{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .right{
+                        width: 5rem;
+                        height: 100%;
+                        position: absolute;
+                        left: 5rem;
+                        top: 0;
+                        font-size: 1.85vh;
+                        overflow: hidden;
+                        .animationpart{
+                            display: none;
+                            .opacityfunc(0);
+                            transition: all 0.2s linear;
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            &.active{
+                                .opacityfunc(1);
+                                z-index: 10;
+                                display: inline-block;
+                            }
+                            transition: opacity @time2 linear; 
+                        }
+                        .slogo{
+                            position: absolute;
+                            top: 35px;
+                            left: 45px;
+                            color: #490000;
+                            text-align: center;
+                            z-index: 100;
+                            img{
+                                width: 14.26vh;
+                                height: 13.89vh;
+                            }
+                            div{
+                                margin: 1vh;
+                            }
+                        }
+                        .zy{
+                            position: absolute;
+                            left: 7.41vh;
+                            bottom: 7.41vh;
+                            color: #490000;
+                            z-index: 100;
+                            div{
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                word-break: keep-all;
+                                white-space: nowrap;
+                                cursor: pointer;
+                                transition: all @time2 linear;
+                                z-index: 1;
+                                .hoverL{
+                                    .hover(@background: #efde1c;@text-align: left);
+                                }
+                                &:hover{
+                                    .hoverL{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            .second{
+                                width: 0;
+                                .opacityfunc(0);
+                                z-index: 0;
+                            }
+                        }
+                    }
+                }
+                .leftsection1{
+                    .right{
+                        .animationpart{
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            @time1: 0.4s;
+                            .div1{
+                                width: 6vh;
+                                height: 4.6vh;
+                                background: #ac2e38;
+                                position: absolute;
+                                right: 0;
+                                top: 8.6vh;
+                                .opacityfunc(0);
+                                animation: leftsection1-1 @time1 linear @time0 forwards;
+                                -webkit-animation: leftsection1-1 @time1 linear @time0 forwards;
+                            }
+                            .div2{
+                                width: 5.92vh;
+                                height: 6.11vh;
+                                background: #b5454e;
+                                position: absolute;
+                                right: 5vh;
+                                top: 12.6vh;
+                                .opacityfunc(0);
+                                animation: leftsection1-1 @time1 linear @time0 forwards;
+                                -webkit-animation: leftsection1-1 @time1 linear @time0 forwards;
+                            }
+                            .div3{
+                                width: 37.3vh;
+                                height: 73.7vh;
+                                background: #ffffff;
+                                border: 2px solid #a41823;
+                                position: absolute;
+                                right: 7.9vh;
+                                top: 17.5vh;
+                                font-size: 1.85vh;
+                                color: #a41823;
+                                .opacityfunc(0);
+                                animation: leftsection1-2 @time1 linear @time0+@time1 forwards;
+                                -webkit-animation: leftsection1-2 @time1 linear @time0+@time1 forwards;
+                                div{
+                                    width: 33.8vh;
+                                    text-align: justify;
+                                    position: absolute;
+                                    left: 3vh;
+                                    bottom: 5vh;
+                                    p{
+                                        width: 20em;
+                                        margin-bottom: 0.8vh;
+                                        overflow: hidden; 
+                                        white-space: nowrap;
+                                        .opacityfunc(0);
+                                        &.a1{
+                                            animation: typing @time1 steps(20) @time0+@time1*2 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*2 forwards;
+                                        }
+                                        &.a2{
+                                            animation: typing @time1 steps(20) @time0+@time1*3 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*3 forwards;
+                                        }
+                                        &.a3{
+                                            animation: typing @time1 steps(20) @time0+@time1*4 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*4 forwards;
+                                        }
+                                        &.a4{
+                                            animation: typing @time1 steps(20) @time0+@time1*5 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*5 forwards;
+                                        }
+                                        &.a5{
+                                            animation: typing @time1 steps(20) @time0+@time1*6 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*6 forwards;
+                                        }
+                                        &.a6{
+                                            animation: typing @time1 steps(20) @time0+@time1*7 forwards;
+                                            -webkit-animation: typing @time1 steps(20) @time0+@time1*7 forwards;
+                                        }
+                                    }
+                                }
+                            }
+                            .div4{
+                                position: absolute;
+                                right: 0;
+                                top: 24.07vh;
+                                height: 41.85vh;
+                                width: 100%;
+                                padding: 0.93vh 0;
+                                color: #ffffff;
+                                .opacityfunc(0);
+                                animation: leftsection1-3 @time1 linear @time0+@time1 forwards;
+                                -webkit-animation: leftsection1-3 @time1 linear @time0+@time1 forwards;
+                                div{
+                                    position: absolute;
+                                    left: 0;
+                                    height: 1px;
+                                    width: 100%;
+                                }
+                                div.first{
+                                    top: 0;
+                                    background: #a41823;
+                                }
+                                div.second{
+                                    bottom: 0;
+                                    background: #a41823;
+                                }
+                                div.third{
+                                    position: initial;
+                                    height: 100%;
+                                    background-color: #a41823;
+                                    background-image: url(../img/gd.png),url(../img/font1.png);
+                                    background-size: 34.1vh 30.74vh, 88.9vh 100vh;
+                                    background-repeat: no-repeat, repeat;
+                                    background-position: 75% 50%, 0 0;
+                                    p{
+                                        position: absolute;
+                                        left: 7.78vh;
+                                        top: 7.68vh;
+                                        font-size: 4.44vh;
+                                        .opacityfunc(0);
+                                        .hoverL{
+                                            .hover(@background: #efde1c;@text-align: left; @top: -14px);
+                                        }
+                                        &:hover{
+                                            .hoverL{
+                                                width: 100%;
+                                            }
+                                        }
+                                        animation: leftsection1-4 @time1 linear @time0+@time1*2 forwards;
+                                -webkit-animation: leftsection1-4 @time1 linear @time0+@time1*2 forwards;
+                                    }
+                                    span{
+                                        position: absolute;
+                                        left: 7.78vh;
+                                        top: 18.52vh;
+                                        font-size: 2.22vh;
+                                        .opacityfunc(0);
+                                        animation: leftsection1-4 @time1 linear @time0+@time1*2 forwards;
+                                -webkit-animation: leftsection1-4 @time1 linear @time0+@time1*2 forwards;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .leftsection2{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @deg: -24deg;
+                            @time: 0.4s;
+                            .div1{
+                                position: absolute;
+                                right: -1.17rem;
+                                top: 14.26vh;
+                                width: 1.17rem;
+                                height: 8.24vh;
+                                background: #ec6d22;
+                                transform: skewX(@deg);
+                                transform-origin: left bottom;
+                                .opacityfunc(0);
+                                animation: part2-1 @time linear @time0 forwards;
+                                -webkit-animation: part2-1 @time linear @time0 forwards;
+                            }
+                            .div2{
+                                background: #ec6d22;
+                                position: absolute;
+                                left: -0.47rem;
+                                top: 70.3vh;
+                                width: 0.47rem;
+                                height: 8.3vh;
+                                transform-origin: right top;
+                                transform: skewX(@deg);
+                                .opacityfunc(0);
+                                animation: part2-3 @time linear @time0+0.3s+@time forwards;
+                                -webkit-animation: part2-3 @time linear @time0+0.3s+@time forwards;
+                            }
+                            .div4{
+                                background: #ec6d22;
+                                position: absolute;
+                                right: -3.22rem;
+                                top: 35.7vh;
+                                width: 3.22rem;
+                                height: 37vh;
+                                transform-origin: left bottom;
+                                transform: skewX(@deg);
+                                animation: part2-4 @time linear @time0+0.2s forwards;
+                                -webkit-animation: part2-4 @time linear @time0+0.2s forwards;
+                                .first{
+                                    position: absolute;
+                                    left: 0.15rem;
+                                    top: 20vh;
+                                    width: 2px;
+                                    background: #ec6d22;
+                                    height: 1px;
+                                    transform-origin: center center;
+                                    transform: scaleY(1);
+                                    animation: part2-4-2 @time linear @time0+0.2s+@time forwards;
+                                    -webkit-animation: part2-4-2 @time linear @time0+0.2s+@time forwards;
+                                }
+                                .second{
+                                    position: absolute;
+                                    right: ~'calc(0.15rem + 24px)';
+                                    bottom: -0.1vh;
+                                    width: 2px;
+                                    background: #ec6d22;
+                                    height: 0.1vh;
+                                    transform-origin: right top;
+                                    transform: scaleY(1);
+                                    animation: part2-4-2 @time linear @time0+0.2s+@time forwards;
+                                    -webkit-animation: part2-4-2 @time linear @time0+0.2s+@time forwards;
+                                }
+                                .third{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow: hidden;
+                                    div{
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        transform-origin: left bottom;
+                                        transform: skewX(-@deg);
+                                        background: url(../img/font2.png), url(../img/page2.png);
+                                        background-size: 88.9vh 100vh, 25vh 29.4vh;
+                                        background-repeat: repeat, no-repeat;
+                                        background-position: 0 0, 68% 50%;
+                                        p{
+                                            position: absolute;
+                                            right: 0.5rem;
+                                            top: 14.4vh;
+                                            font-size: 1.85vh;
+                                            width: 1.6rem;
+                                            text-align: justify;        
+                                        }
+                                    }
+                                }
+                            }
+                            .div3{
+                                background: #ec6d22;
+                                position: absolute;
+                                left: -2.6rem;
+                                top: 25.4vh;
+                                width: 2.6rem;
+                                height: 36.6vh;
+                                transform-origin: right top;
+                                transform: skewX(@deg);
+                                .opacityfunc(0);
+                                animation: part2-3 @time linear @time0+0.2s forwards;
+                                -webkit-animation: part2-3 @time linear @time0+0.2s forwards;
+                                .first{
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 36.6vh;
+                                    background: #ec6d22;
+                                    width: 2px;
+                                    height: 0px;
+                                    animation: part2-3-2 @time linear @time0+0.2s+@time forwards;
+                                    -webkit-animation: part2-3-2 @time linear @time0+0.2s+@time forwards;
+                                }
+                                .second{
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow-x: hidden;
+                                    .opacityfunc(0);
+                                    animation: fadeIn @time linear @time0+0.2s+@time forwards;
+                                    -webkit-animation: fadeIn @time linear @time0+0.2s+@time forwards;
+                                    div{
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        transform-origin: right top;
+                                        transform: skewX(-@deg);
+                                        background-image: url(../img/font2.png);
+                                        background-size: 88.9vh 100vh;
+                                        background-repeat: no-repeat;
+                                        p{
+                                            position: absolute;
+                                            left: 0.42rem;
+                                            top: 7.9vh;
+                                            font-size: 4.4vh;
+                                            .hoverL{
+                                                .hover(@background: #efde1c;@text-align: left; @top: -14px);
+                                            }
+                                            &:hover{
+                                                .hoverL{
+                                                    width: 100%;
+                                                }
+                                            }
+                                        }
+                                        span{
+                                            position: absolute;
+                                            left: 0.42rem;
+                                            top: 17.6vh;
+                                            font-size: 2.2vh;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .leftsection3{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @time: 0.4s;
+                            @time1: 0.5s;
+                            @time2:0.2s;
+                            .div1{
+                                position: absolute;
+                                right: -12.5vh;
+                                top: 28.57vh;
+                                height: 14.286vh;
+                                width: 12.5vh;
+                                .opacityfunc(0);
+                                background: url(../img/triangle.png) right top/100% 100% no-repeat;
+                                animation: part3-1 @time linear @time0 forwards;
+                                -webkit-animation: part3-1 @time linear @time0 forwards;
+                                z-index: 2;
+                            }
+                            .div2{
+                                position: absolute;
+                                right: -19vh;
+                                top: 28.57vh;
+                                height: 14.286vh;
+                                width: 12.5vh;
+                                .opacityfunc(0.5);
+                                background: url(../img/triangle.png) right top/100% 100% no-repeat;
+                                animation: part3-2 @time1 linear @time0 forwards;
+                                -webkit-animation: part3-2 @time1 linear @time0 forwards;
+                                z-index: 1;
+                            }
+                            .div3{
+                                position: absolute;
+                                right: 15.74vh;
+                                top: 21.3vh;
+                                z-index: 3;
+                                width: 3.02rem;
+                                height: 67.13vh;
+                                background-color: #efde1c;
+                                background-image: url(../img/font2.png), url(../img/page3.png);
+                                background-size: 88.9vh 100vh, 23.3vh 26.6vh;
+                                background-position: 0 0, 90% 95%;
+                                background-repeat: repeat, no-repeat;
+                                transform-origin: right 10%;
+                                .opacityfunc(0);
+                                transform: scale(0.1);
+                                animation: part3-3-1 @time linear @time0+@time forwards;
+                                -webkit-animation: part3-3-1 @time linear @time0+@time forwards;
+                                overflow: hidden;
+                                .diva{
+                                    position: absolute;
+                                    top: 0;
+                                    left: ~'calc(1.51rem - 25px)';
+                                    width: 50px;
+                                    height: 0;
+                                    border: 25px solid transparent;
+                                    border-top: 25px solid #ffffff;
+                                }
+                                .divb{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: ~'calc(1.51rem - 25px)';
+                                    width: 50px;
+                                    height: 0;
+                                    border: 25px solid transparent;
+                                    border-bottom: 25px solid #ffffff;
+                                    z-index: 2;
+                                }
+                                .divc{
+                                    position: absolute;
+                                    width: 2.84rem;
+                                    height: 62.6vh;
+                                    left: 0.09rem;
+                                    bottom: 10px;
+                                    border: 4px solid #ffffff;
+                                    z-index: 1;
+                                    p{
+                                        position: absolute;
+                                    }
+                                    @time3: 0.1s;
+                                    .a1{
+                                        right: -4px;
+                                        top: -4px;
+                                        width: 1.44rem;
+                                        height: 4px;
+                                        background: #efde1c;
+                                        animation: part3-3-2 @time3 linear @time0+@time*2 forwards;
+                                        -webkit-animation: part3-3-2 @time3 linear @time0+@time*2 forwards;
+                                    }
+                                    .a2{
+                                        right: -4px;
+                                        bottom: -4px;
+                                        width: 4px;
+                                        height: 64vh;
+                                        background: #efde1c;
+                                        animation: part3-3-3 @time3*2.5 linear @time0+@time*2+@time3 forwards;
+                                        -webkit-animation: part3-3-3 @time3*2.5 linear @time0+@time*2+@time3 forwards;
+                                    }
+                                    .a3{
+                                        left: -4px;
+                                        bottom: -4px;
+                                        width: 2.9rem;
+                                        height: 4px;
+                                        background: #efde1c;
+                                        animation: part3-3-2 @time3*2 linear @time0+@time*2+@time3*3.5 forwards;
+                                        -webkit-animation: part3-3-2 @time3*2 linear @time0+@time*2+@time3*3.5 forwards;
+                                    }
+                                    .a4{
+                                        left: -4px;
+                                        top: -4px;
+                                        width: 4px;
+                                        height: 64vh;
+                                        background: #efde1c;
+                                        animation: part3-3-3 @time3*2.5 linear @time0+@time*2+@time3*5.5 forwards;
+                                        -webkit-animation: part3-3-3 @time3*2.5 linear @time0+@time*2+@time3*5.5 forwards;
+                                    }
+                                    .a5{
+                                        right: 1.42rem;
+                                        top: -4px;
+                                        width: 1.44rem;
+                                        height: 4px;
+                                        background: #efde1c;
+                                        animation: part3-3-2 @time3 linear @time0+@time*2+@time3*8 forwards;
+                                        -webkit-animation: part3-3-2 @time3 linear @time0+@time*2+@time3*8 forwards;
+                                    }
+                                }
+                                .divd{
+                                    position: absolute;
+                                    left: 0.42rem;
+                                    top: 7.9vh;
+                                    z-index: 2;
+                                    p{
+                                        font-size: 4.4vh;
+                                        margin-bottom: 30px;
+                                        position: relative;
+                                        display: inline-block;
+                                        width: 11vh;
+                                        .hoverL{
+                                            .opacityfunc(0);
+                                            animation: fadeIn @time2 steps(3) @time0+@time*3 forwards;
+                                            -webkit-animation: fadeIn @time2 @time steps(3) @time0+@time*3 forwards;
+                                            .hover(@background: #ec6d22;@text-align: left; @top: -14px);
+                                        }
+                                        &:hover{
+                                            .hoverL{
+                                                width: 100%;
+                                            }
+                                        }
+                                        &>span.fuyu{
+                                            display: inline-block;
+                                            word-break: keep-all;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            .opacityfunc(0);
+                                            width: 3em;
+                                            animation: typing @time2 steps(3) @time0+@time*3 forwards;
+                                            -webkit-animation: typing @time2 @time steps(3) @time0+@time*3 forwards;
+                                        }
+                                    }
+                                    &>span{
+                                        font-size: 2.22vh;
+                                        display: inline-block;
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 10em;
+                                        animation: typing @time2 steps(10) @time0+@time*3 forwards;
+                                        -webkit-animation: typing @time2 @time steps(10) @time0+@time*3 forwards;
+                                    }
+                                }
+                                .dive{
+                                    z-index: 3;
+                                    font-size: 0.104rem;
+                                    position: absolute;
+                                    left: 0.58rem;
+                                    bottom: 12vh;
+                                    line-height: 0.17rem;
+                                    letter-spacing: 0.02rem;
+                                    p{
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 18em;
+                                    }
+                                    .a1{
+                                        animation: typing @time2 steps(18) @time0+@time*3 forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3 forwards;
+                                    }
+                                    .a2{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.1s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.1s forwards;
+                                    }
+                                    .a3{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.2s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.2s forwards;
+                                    }
+                                    .a4{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.3s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.3s forwards;
+                                    }
+                                    .a5{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.4s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.4s forwards;
+                                    }
+                                    .a6{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.5s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.5s forwards;
+                                    }
+                                    .a7{
+                                        animation: typing @time2 steps(18) @time0+@time*3+0.6s forwards;
+                                        -webkit-animation: typing @time2 @time steps(18) @time0+@time*3+0.6s forwards;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .leftsection4{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @time: 0.4s;
+                            .div1{
+                                position: absolute;
+                                right: -100px;
+                                .opacityfunc(0);
+                                top: 57vh;
+                                width: 8.2vh;
+                                height: 14.286vh;
+                                background: #09a346;
+                                transform-origin: left bottom;
+                                transform: skewX(-30deg);
+                                animation: part4-1 @time linear @time0 forwards;
+                                -webkit-animation: part4-1 @time linear @time0 forwards;
+                                z-index: 1;
+                            }
+                            .div2{
+                                position: absolute;
+                                left: -8.2vh;
+                                top: 28vh;
+                                .opacityfunc(0);
+                                width: 8.2vh;
+                                height: 14.286vh;
+                                background: #09a346;
+                                transform-origin: right top;
+                                transform: skewX(-30deg);
+                                animation: part4-2 @time linear @time0 forwards;
+                                -webkit-animation: part4-2 @time linear @time0 forwards;
+                                z-index: 1;
+                            }
+                            .div3{
+                                position: absolute;
+                                height: 55.56vh;
+                                width: 64.16vh;
+                                right: ~'calc(2.5rem - 32.08vh)';
+                                top: 22.22vh;
+                                transform: skew(30deg);
+                                .a1{
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 20px;
+                                    background: #ffffff;
+                                    padding: 20px 27px;
+                                    z-index: 1;
+                                    .opacityfunc(0);
+                                    animation: fadeIn 0s linear @time0 forwards;
+                                    -webkit-animation: fadeIn 0s linear @time0 forwards;
+                                    &>div.bzd{
+                                        width: 100%;
+                                        height: 100%;
+                                        background: url(../img/page4.png),url(../img/lbx.png);
+                                        background-size: 19.17vh 14.63vh, 100% 100%;
+                                        background-position: 70% 35%, 0 0;
+                                        background-repeat: no-repeat, no-repeat;
+                                        position: relative;
+                                        .opacityfunc(0);
+                                        transform: skew(-30deg) rotate(2600deg) scale(0.1);
+                                        animation: part4-3 @time linear @time0+@time forwards;
+                                        -webkit-animation: part4-3 @time linear @time0+@time forwards;
+                                        div.part1{
+                                            .opacityfunc(0);
+                                            animation: fadeIn @time linear @time0+@time*2 forwards;
+                                    -webkit-animation: fadeIn @time linear @time0+@time*2 forwards;
+                                            position: absolute;
+                                            left: 14.4vh;
+                                            top: 7.4vh;
+                                            margin-bottom: 30px;
+                                            p{
+                                                display: inline-block;
+                                                position: relative;
+                                                margin-bottom: 2.3vh;
+                                                .hoverL{
+                                                    .hover(@background: #f2e549;@text-align: left; @top: -14px);
+                                                }
+                                                &:hover{
+                                                    .hoverL{
+                                                        width: 100%;
+                                                    }
+                                                }
+                                                span{
+                                                    display: inline-block;
+                                                    word-break: keep-all;
+                                                    white-space: nowrap;
+                                                    overflow: hidden;
+                                                    font-size: 4.4vh;
+                                                }
+                                            }
+                                            span{
+                                                font-size: 2.22vh;
+                                            }
+                                        }
+                                        div.part2{
+                                            .opacityfunc(0);
+                                            animation: fadeIn @time linear @time0+@time*2 forwards;
+                                    -webkit-animation: fadeIn @time linear @time0+@time*2 forwards;
+                                            position: absolute;
+                                            left: 14.4vh;
+                                            bottom: 9vh;
+                                            font-size: 1.85vh;
+                                            line-height: 2.6vh;
+                                            width: 30vh;
+                                            letter-spacing: 2px;
+                                        }
+                                            
+                                    }
+                                }
+                                .a2{
+                                    width: 49vh;
+                                    height: 0;
+                                    position: absolute;
+                                    left: 7.58vh;
+                                    top: 27.78vh;
+                                    transform: skew(-30deg);
+                                    animation: part4-4 @time linear @time0+@time*2 forwards;
+                                -webkit-animation: part4-4 @time linear @time0+@time*2 forwards;
+                                    &>div{
+                                        width: 100%;
+                                        height: 100%;
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        transform: skew(-30deg);
+                                        background: #09a346;
+                                        background-size: 88.9vh 100vh;
+                                        &>div{
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            overflow: hidden;
+                                            div{
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                width: 500%;
+                                                height: 100%;
+                                                transform-origin: left bottom;
+                                                transform: skew(30deg);
+                                                background: url(../img/font4.png) repeat ;
+                                                background-size: 88.9vh 100vh;
+                                                background-origin: 0 0;
+                                            }
+                                        }
+                                        p{
+                                            position: absolute;
+                                            width: 24.5vh;
+                                            height: 24.5vh;
+                                            transform: skew(30deg);
+                                        }
+                                        .part1{
+                                            top: 0;
+                                            right: 0px;
+                                            transform-origin: right top;
+                                            .opacityfunc(0);
+                                            animation: fadeIn 0s linear @time0 forwards;
+                                    -webkit-animation: fadeIn 0s linear @time0 forwards;
+                                            span{
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                transform-origin: inherit;
+                                                transform: skew(30deg);
+                                                background: #ffffff;
+                                            }
+                                        }
+                                        .part2{
+                                            bottom: 0;
+                                            left: 0px;
+                                            transform-origin: left bottom;
+                                            .opacityfunc(0);
+                                            animation: fadeIn 0s linear @time0 forwards;
+                                    -webkit-animation: fadeIn 0s linear @time0 forwards;
+                                            span{
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                transform-origin: inherit;
+                                                transform: skew(30deg);
+                                                background: #ffffff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .leftsection5{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @time: 0.4s;
+                            @time2: 0.2s;
+                            perspective: 2000;
+                            -webkit-perspective:2000;
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            .div1{
+                                position: absolute;
+                                right: 24px;
+                                bottom: 31.48vh;
+                                background: #187daf;
+                                height: 3.1vh;
+                                width: 0;
+                                transform-origin: right top;
+                                transform: skewY(-34deg);
+                                animation: part5-1 @time linear @time0 forwards;
+                                -webkit-animation: part5-1 @time linear @time0 forwards;
+                            }
+                            .div2{
+                                position: absolute;
+                                right: ~'calc(24px + 8.3vh)';
+                                bottom: 0;
+                                width: 61.1vh;
+                                height: 84.8vh;
+                                background:  url(../img/font4.png), url(../img/page5.png);
+                                background-color: #187daf;
+                                background-repeat: repeat, no-repeat;
+                                background-position: 0 0, 50% 10%;
+                                background-size: 88.9vh 100vh, 13.3vh 18.1vh;
+                                .opacityfunc(0);
+                                transform-origin: right;
+                                transform-style: preserve-3d;
+                                transform: rotateY(90deg);
+                                animation: part5-2 @time linear @time0+@time forwards;
+                                -webkit-animation: part5-2 @time linear @time0+@time forwards;
+                                .diva{
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 15.3vh;
+                                    height: 9.4vh;
+                                    background: #187daf;
+                                    box-shadow: 3px 5px 4px -1px #0e5f95;
+                                    div{
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        transform-origin: right top;
+                                        transform: skewX(-59deg);
+                                        background: #ffffff;
+                                    }
+                                }
+                                .divb{
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 31.48vh;
+                                    height: 3.1vh;
+                                    width: 8.3vh;
+                                    background: #ffffff;
+                                    transform-origin: left top;
+                                    transform: skewY(34deg);
+                                }
+                                .divc{
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                    width: 36.1vh;
+                                    height: 22.7vh;
+                                    .fir{
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 100%;
+                                        bottom: 0;
+                                        right: 0;
+                                        background: #ffffff;
+                                        transform-origin: left bottom;
+                                        transform: skewX(-58.5deg);
+                                        p{
+                                            position: absolute;
+                                            left: 54px;
+                                            bottom: 0;
+                                            width: 3px;
+                                            height: 89%;
+                                            background: #187daf;
+                                            border-top-right-radius: 100px;
+                                            transform: scaleY(0);
+                                            transform-origin: right top;
+                                            animation: part5-3 @time linear @time0+@time*2 forwards;
+                                            -webkit-animation: part5-3 @time linear @time0+@time*2 forwards;
+                                        }
+                                    }
+                                }
+                                .divd{
+                                    position: absolute;
+                                    width: 4.2vh;
+                                    height: 3px;
+                                    background: #187daf;
+                                    left: -4.2vh;
+                                    bottom: 31.1vh;
+                                    border-bottom-left-radius: 100px;
+                                    transform: skewY(-31.5deg) scaleX(0);
+                                    transform-origin: right top;
+                                    animation: part5-4 @time linear @time0+@time*2 forwards;
+                                    -webkit-animation: part5-4 @time linear @time0+@time*2 forwards;
+                                }
+                                .dive{
+                                    position: absolute;
+                                    left: 6vh;
+                                    top: 14.8vh;
+                                    font-size: 4.44vh;
+                                    p{
+                                        margin-bottom: 10px;
+                                        display: inline-block;
+                                        position: relative;
+                                        width: 11vh;
+                                        .hoverL{
+                                            .hover(@background: #f2e549;@text-align: left);
+                                        }
+                                        &:hover{
+                                            .hoverL{
+                                                width: 100%;
+                                            }
+                                        }
+                                        .fuyu{
+                                            display: inline-block;
+                                            word-break: keep-all;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            .opacityfunc(0);
+                                            width: 3em;
+                                            animation: typing @time2 steps(3) @time0+@time*2 forwards;
+                                            -webkit-animation: typing @time2 @time steps(3) @time0+@time*2 forwards;
+                                        }
+                                    }
+                                    &>span{
+                                        font-size: 2.22vh;
+                                        display: inline-block;
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 7em;
+                                        animation: typing @time2 steps(7) @time0+@time*2 forwards;
+                                        -webkit-animation: typing @time2 @time steps(7) @time0+@time*2 forwards;
+                                    }
+                                }
+                                .divf{
+                                    position: absolute;
+                                    left: 6vh;
+                                    top: 44.4vh;
+                                    font-size: 1.85vh;
+                                    line-height: 2.4vh;
+                                    letter-spacing: 2px;
+                                    .fir{
+                                        display: inline-block;
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 20em;
+                                        animation: typing @time2 steps(20) @time0+@time*2 forwards;
+                                        -webkit-animation: typing @time2 @time steps(20) @time0+@time*2 forwards;
+                                    }
+                                    .sec{
+                                        display: inline-block;
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 17em;
+                                        animation: typing @time2 steps(17) @time0+@time*2+0.2s forwards;
+                                        -webkit-animation: typing @time2 @time steps(17) @time0+@time*2+0.2s forwards;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .leftsection6{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @time: 0.4s;
+                            @time2: 0.2s;
+                            .div1{
+                                position: absolute;
+                                width: 0;
+                                height: 1.3vh;
+                                right: 24px;
+                                bottom: 17.6vh;
+                                background: #ffffff;
+                                transform-origin: right top;
+                                transform: skewY(-28.5deg);
+                                z-index: 2;
+                                overflow: hidden;
+                                animation: part6-1 @time*3 linear @time0 forwards;
+                                -webkit-animation: part6-1 @time*3 linear @time0 forwards;
+                                p{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    height: 100%;
+                                    width: 10vh;
+                                    background: #4069de;
+                                }
+                            }
+                            .div2{
+                                position: absolute;
+                                width: 0;
+                                height: 1.3vh;
+                                right: 24px;
+                                bottom: 14.286vh;
+                                background: #ffffff;
+                                transform-origin: right top;
+                                transform: skewY(-28.5deg);
+                                z-index: 2;
+                                overflow: hidden;
+                                animation: part6-1 @time*3 linear @time0 forwards;
+                                -webkit-animation: part6-1 @time*3 linear @time0 forwards;
+                                p{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    height: 100%;
+                                    width: 10vh;
+                                    background: #4069de;
+                                }
+                            }
+                            .div3{
+                                position: absolute;
+                                right: ~'calc(24px + 10vh)';
+                                bottom: 0;
+                                width: 59vh;
+                                height: 78.4vh;
+                                background: #4069de url(../img/font4.png) 0 0 repeat;
+                                background-size: 88.9vh 100vh;
+                                .diva{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 12.8vh;
+                                    width: 44.8vh;
+                                    height: 37vh;
+                                    background: #ffffff;
+                                    padding: 1vh;
+                                    .divdo{
+                                        position: relative;
+                                        width: 49.5vh;
+                                        height: 100%;
+                                        background: url(../img/font4.png) 0 0 repeat, url(../img/page6.png) 85% 100% no-repeat;
+                                        background-color: #4069de;
+                                        background-size: 88.9vh 100vh, 25.8vh 34vh;
+                                        transform: scale(1.1);
+                                        .opacityfunc(0.6);
+                                        animation: part6-2 @time linear @time0 - 0.3s forwards;
+                                -webkit-animation: part6-2 @time linear @time0 - 0.3s forwards;
+                                        p{
+                                            position: absolute;
+                                            left: 7.6vh;
+                                            top: 8.89vh;
+                                            font-size: 4.44vh;
+                                            width: 11vh;
+                                            .hoverL{
+                                                .hover(@background: #f2e549;@text-align: left);
+                                            }
+                                            &:hover{
+                                                .hoverL{
+                                                    width: 100%;
+                                                }
+                                            }
+                                            .fuyu{
+                                                display: inline-block;
+                                                word-break: keep-all;
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                .opacityfunc(0);
+                                                width: 3em;
+                                                animation: typing @time2 steps(3) @time0+(@time0 - 0.3s) forwards;
+                                                -webkit-animation: typing @time2 @time steps(3) @time0+(@time0 - 0.3s) forwards;
+                                            }
+                                        }
+                                        &>span{
+                                            position: absolute;
+                                            left: 7.6vh;
+                                            top: 16.4vh;
+                                            font-size: 2.22vh;
+                                            display: inline-block;
+                                            word-break: keep-all;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            .opacityfunc(0);
+                                            width: 14em;
+                                            animation: typing @time2 steps(14) @time0+(@time0 - 0.3s) forwards;
+                                            -webkit-animation: typing @time2 @time steps(14) @time0+(@time0 - 0.3s) forwards;
+                                        }
+                                    }
+                                    
+                                }
+                                .divb{
+                                        position: absolute;
+                                        left: 23.6vh;
+                                        bottom: 10.2vh;
+                                        font-size: 1.85vh;
+                                        p{
+                                            display: inline-block;
+                                            word-break: keep-all;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            .opacityfunc(0);
+                                            width: 17em;
+                                            letter-spacing: 2px;
+                                        }
+                                        .a1{
+                                            animation: typing @time2 steps(17) @time0+0.2s forwards;
+                                            -webkit-animation: typing @time2 @time steps(17) @time0+0.2s forwards;
+                                        }
+                                        .a2{
+                                            animation: typing @time2 steps(17) @time0+0.3s forwards;
+                                            -webkit-animation: typing @time2 @time steps(17) @time0+0.3s forwards;
+                                        }
+                                        .a3{
+                                            animation: typing @time2 steps(17) @time0+0.4s forwards;
+                                            -webkit-animation: typing @time2 @time steps(17) @time0+0.4s forwards;
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                }
+                .leftsection7{
+                    .right{
+                        .animationpart{
+                            color: #ffffff;
+                            @time: 0.4s;
+                            @time2: 0.2s;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            perspective: 2000;
+                            -webkit-perspective:2000;
+                            perspective-origin: right;
+                            .div1{
+                                position: absolute;
+                                right: 24px;
+                                top: 85.714vh;
+                                width: 0;
+                                height: 7.5vh;
+                                background: #e04bde;
+                                animation: part7-1 @time linear @time0 forwards;
+                                -webkit-animation: part7-1 @time linear @time0 forwards;
+                            }
+                            .div2{
+                                position: absolute;
+                                right: 24px;
+                                bottom: 14.286vh;
+                                width: 71.8vh;
+                                height: 62.5vh;
+                                z-index: 1;
+                                .opacityfunc(0);
+                                transform-origin: left bottom;
+                                transform: rotateX(-90deg);
+                                animation: part7-2 @time*2 linear @time0+@time forwards;
+                                -webkit-animation: part7-2 @time*2 linear @time0+@time forwards;
+                                .diva{
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: #e04bde;
+                                    transform-origin: left bottom;
+                                    transform: skewX(-19.6deg);
+                                    border-radius: 6vh;
+                                    overflow: hidden;
+                                    .diva1{
+                                        position: absolute;
+                                        left: -1px;
+                                        bottom: 32vh;
+                                        width: 24.2vh;
+                                        height: 21.66vh;
+                                        background: #ffffff;
+                                        border-bottom-right-radius: 6vh;
+                                    }
+                                    .diva2{
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        background: url(../img/font7.png) 0 0 repeat;
+                                        background-size: 88.9vh 100vh;
+                                        transform-origin: left bottom;
+                                        transform: skewX(19.6deg);
+                                    }
+                                }
+                                .divb{
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                    width: 5.56vh;
+                                    height: 7.5vh;
+                                    background: #ffffff;
+                                }
+                            }
+                            .div3{
+                                position: absolute;
+                                width: 35.9vh;
+                                height: 20.7vh;
+                                bottom: 46.75vh;
+                                right: ~'calc(48.25vh + 25px)';
+                                background: transparent;
+                                transform-origin: left 53.15vh;
+                                transform: skewX(-19.6deg);
+                                z-index: 2;
+                                border-bottom-right-radius: 6vh;
+                                border-top-left-radius: 6vh;
+                                overflow: hidden;
+                                .diva{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 43.4vh;
+                                    height: 100%;
+                                    background: transparent;
+                                    transform-origin: right top;
+                                    transform: skew(19.6deg);
+                                    font-size: 0;
+                                    white-space: nowrap;
+                                    p{
+                                        position: relative;
+                                        z-index: 1;
+                                        width: 10%;
+                                        height: 100%;
+                                        display: inline-block;
+                                        background: transparent;
+                                        border: none;
+                                        overflow: hidden;
+                                        span{
+                                            position: absolute;
+                                            left: 105%;
+                                            top: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: #d501d2;
+                                            animation: part7-3 @time linear @time0+@time forwards;
+                                            -webkit-animation: part7-3 @time linear @time0+@time forwards;
+                                        }
+                                    }
+                                }
+                                .divb{
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 43.4vh;
+                                    height: 100%;
+                                    transform-origin: right top;
+                                    transform: skew(19.6deg);
+                                    .opacityfunc(0);
+                                    background: url(../img/font7.png) 0 0 repeat, url(../img/page7.png) 79% 50% no-repeat;
+                                    background-color: #d501d2;
+                                    background-size: 88.9vh 100vh, 12.78vh 12.69vh;
+                                    animation: fadeIn @time*0.5 linear @time0+@time*2 forwards;
+                                    -webkit-animation: fadeIn @time*0.5 linear @time0+@time*2 forwards;
+                                    p{
+                                        position: absolute;
+                                        left: 8.8vh;
+                                        top: 6.1vh;
+                                        font-size: 4.44vh;
+                                        width: 7.4vh;
+                                        .hoverL{
+                                            .hover(@background: #f2e549;@text-align: left);
+                                        }
+                                        &:hover{
+                                            .hoverL{
+                                                width: 100%;
+                                            }
+                                        }
+                                        .fuyu{
+                                            display: inline-block;
+                                            word-break: keep-all;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            .opacityfunc(0);
+                                            width: 3em;
+                                            animation: typing @time2 steps(3) @time0+@time*2.5 forwards;
+                                            -webkit-animation: typing @time2 @time steps(3) @time0+@time*2.5 forwards;
+                                        }
+                                    }
+                                    &>span{
+                                        position: absolute;
+                                        left: 8.8vh;
+                                        top: 13.4vh;
+                                        font-size: 2.22vh;
+                                        display: inline-block;
+                                        word-break: keep-all;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        .opacityfunc(0);
+                                        width: 14em;
+                                        animation: typing @time2 steps(14) @time0+@time*2.5 forwards;
+                                        -webkit-animation: typing @time2 @time steps(14) @time0+@time*2.5 forwards;
+                                    }
+                                }
+                            }
+                            .div4{
+                                position: absolute;
+                                right: 9.26vh;
+                                bottom: 31.9vh;
+                                z-index: 4;
+                                letter-spacing: 2px;
+                                font-size: 1.85vh;
+                                width: 33.3vh;
+                                p{
+                                    display: inline-block;
+                                    word-break: keep-all;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    .opacityfunc(0);
+                                    width: 19em;
+                                    letter-spacing: 2px;
+                                }
+                                .a1{
+                                    animation: typing @time2 steps(19) @time0+@time*2.5 forwards;
+                                    -webkit-animation: typing @time2 @time steps(19) @time0+@time*2.5 forwards;
+                                }
+                                .a2{
+                                    animation: typing @time2 steps(19) @time0+@time*2.5+0.1s forwards;
+                                    -webkit-animation: typing @time2 @time steps(19) @time0+@time*2.5+0.1s forwards;
+                                }
+                                .a3{
+                                    animation: typing @time2 steps(19) @time0+0.2s forwards;
+                                    -webkit-animation: typing @time2 @time steps(19) @time0+@time*2.5+0.2s forwards;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &>.partright{
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                font-family: myfont;
+                overflow: hidden;
+                background: #000000;
+                .section{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    .opacityfunc(0);
+                    transition: top @time2 linear, opacity @time2 linear;
+                    background: #ffffff;
+                    &.active{
+                        .opacityfunc(1);
+                        &~.section{
+                            top: 100%;
+                            .opacityfunc(0);
+                        }
+                    } 
+                    .left{
+                        position: relative;
+                        width: 50%;
+                        height: 100%;
+                        background-size: cover;
+                        .zz{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: #000000;
+                            .opacityfunc(0.35);
+                        }
+                    }
+                    .right{
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        color: #333333;
+                        padding: 9.8vh 6.48vh;
+                        .first{
+                            position: relative;
+                            width: auto;
+                            display: inline-block;
+                            font-size: 2.6vh;
+                            margin-bottom: 4.65vh;
+                            .hoverL{
+                                .hover(@background: #a41823;@text-align: left);
+                            }
+                            &:hover{
+                                .hoverL{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .second{
+                            position: relative;
+                            display: inline-block;
+                            width: auto;
+                            font-size: 2.04vh;
+                            margin-bottom: 3.2vh;
+                            .hoverL{
+                                .hover(@background: #a41823;@text-align: left);
+                            }
+                            &:hover{
+                                .hoverL{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .third{
+                            width: 100%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .section1{
+                    .left{
+                        background: #000000 url(../img/section1-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section2{
+                    .left{
+                        background: #000000 url(../img/section2-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section3{
+                    .left{
+                        background: #000000 url(../img/section3-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section4{
+                    .left{
+                        background: #000000 url(../img/section4-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section5{
+                    .left{
+                        background: #000000 url(../img/section5-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section6{
+                    .left{
+                        background: #000000 url(../img/section6-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .section7{
+                    .left{
+                        background: #000000 url(../img/section7-1.png) center no-repeat;
+                        background-size: cover;
+                    }
+                }
+                .buttonright{
+                    width: 6vh;
+                    height: 6vh;
+                    position: absolute;
+                    left: 8.3vh;
+                    top: 47vh;
+                    .unit{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1000px;
+                        .opacityfunc(0);
+                        transition: top @time2 linear, opacity @time2 linear, width 0s linear @time2, transform 0.2s linear;
+                        &:hover{
+                            transform: scale(1.3);
+                        }
+                        &.active{
+                            .opacityfunc(1);
+                            width: 100%;
+                            transition: top @time2 linear, opacity @time2 linear, width 0s linear, transform 0.2s linear;
+                            &~.unit{
+                                top: 200%;
+                                .opacityfunc(0);
+                                width: 0;
+                            }
+                        } 
+                        div{
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            .opacityfunc(1);
+                            transition: opacity @time2 linear;
+                        }
+                        .open{
+                            background: url(../img/arrowR.png) center no-repeat;
+                            background-size: 1.3vh 2.41vh;
+                        }
+                        .close{
+                            background: url(../img/close.png) center no-repeat;
+                            background-size: 2.41vh 2.41vh;
+                            .opacityfunc(0);
+                            width: 0;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+}
+@-webkit-keyframes down2 {
+    100% {
+        transform: translate3d(0,-100%,0);
+      }
+}
+@keyframes down2 {
+    100% {
+        transform: translate3d(0,-100%,0);
+      }
+}
+@-webkit-keyframes burn {
+    0%{
+        .opacityfunc(1);
+    }
+    100% {
+        height: 0;
+        .opacityfunc(1);
+      }
+}
+
+@keyframes burn {
+    0%{
+        .opacityfunc(1);
+    }
+    100% {
+        height: 0;
+        .opacityfunc(1);
+      }
+}
+@-webkit-keyframes down1 {
+    0% {
+        margin-top: 20px;
+        .opacityfunc(0);
+      }
+    46% {
+        margin-top: 40px;
+        .opacityfunc(1);
+      }
+    100% {
+        margin-top: 20px;
+        .opacityfunc(0);
+      }
+}
+
+@keyframes down1 {
+    0% {
+        margin-top: 20px;
+        .opacityfunc(0);
+      }
+    46% {
+        margin-top: 40px;
+        .opacityfunc(1);
+      }
+    100% {
+        margin-top: 20px;
+        .opacityfunc(0);
+      }
+}
